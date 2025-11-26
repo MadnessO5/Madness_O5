@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madness Factory - TF2 Edits</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fire Particles Container -->
+    <div id="fireParticles"></div>
+
+    <!-- TF2 Characters -->
+    <div class="tf2-characters">
+        <!-- Left Side Characters -->
+        <div class="character-side left-side">
+            <div class="character scout" data-character="scout">
+                <img src="images/scout.png" alt="Scout" class="character-image">
+                <div class="character-tooltip">Scout</div>
+            </div>
+            <div class="character soldier" data-character="soldier">
+                <img src="images/soldier.png" alt="Soldier" class="character-image">
+                <div class="character-tooltip">Soldier</div>
+            </div>
+            <div class="character pyro" data-character="pyro">
+                <img src="images/pyro.png" alt="Pyro" class="character-image">
+                <div class="character-tooltip">Pyro</div>
+            </div>
+        </div>
+        
+        <!-- Right Side Characters -->
+        <div class="character-side right-side">
+            <div class="character demoman" data-character="demoman">
+                <img src="images/demoman.png" alt="Demoman" class="character-image">
+                <div class="character-tooltip">Demoman</div>
+            </div>
+            <div class="character heavy" data-character="heavy">
+                <img src="images/heavy.png" alt="Heavy" class="character-image">
+                <div class="character-tooltip">Heavy</div>
+            </div>
+            <div class="character spy" data-character="spy">
+                <img src="images/spy.png" alt="Spy" class="character-image">
+                <div class="character-tooltip">Spy</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>MADNESS FACTORY</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#videos" class="nav-link">Videos</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">MADNESS FACTORY</h1>
+            <p class="hero-subtitle">HIGH-QUALITY TF2 EDITS & MONTAGES</p>
+            <p class="hero-description">MADNESS!!!</p>
+            <button class="cta-button" onclick="scrollToSection('videos')">WATCH NOW</button>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2 class="section-title">LATEST EDITS</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder"></div>
+                        <div class="play-overlay">▶</div>
+                    </div>
+                    <h3 class="video-title">GO FUCK</h3>
+                    <p class="video-date">Latest Upload</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder"></div>
+                        <div class="play-overlay">▶</div>
+                    </div>
+                    <h3 class="video-title">GO FUCK</h3>
+                    <p class="video-date">Latest Upload</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder"></div>
+                        <div class="play-overlay">▶</div>
+                    </div>
+                    <h3 class="video-title">GO FUCK</h3>
+                    <p class="video-date">GO FUCK</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">ABOUT MADNESS FACTORY</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Madness Factory, where we craft the most intense and visually stunning Team Fortress 2 edits. Our content is characterized by:</p>
+                    <ul>
+                        <li>Good Edits</li>
+                        <li>High-energy editing style</li>
+                        <li>Creative visual effects</li>
+                        <li>Professional sound design</li>
+                    </ul>
+                    <p>Join us in the factory of madness where every edit tells a story of chaos and skill.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>1K+</h3>
+                        <p>Subscribers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Videos</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1M+</h3>
+                        <p>Views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">JOIN THE FACTORY</h2>
+            <div class="contact-content">
+                <div class="social-links">
+                    <a href="https://youtube.com/@madness_o5?si=yKLz1oR0Ri3hfTek" target="_blank" class="social-link youtube">YouTube</a>
+                    <a href="https://c.tenor.com/PNxAfz_2FPEAAAAd/tenor.gif" target="_blank" class="social-link discord">Discord</a>
+                    <a href="https://c.tenor.com/PNxAfz_2FPEAAAAd/tenor.gif" target="_blank" class="social-link twitter">Twitter</a>
+                </div>
+                <div class="subscription">
+                    <p>Subscribe to never miss an edit from the factory!</p>
+                    <button class="subscribe-btn" onclick="subscribeChannel()">SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Madness Factory. All rights reserved. Team Fortress 2 is a trademark of Valve Corporation.</p>
+        </div>
+    </footer>
+
+    <!-- Audio Elements -->
+    <audio id="scoutSound" preload="auto">
+        <source src="sounds/scout.mp3" type="audio/mpeg">
+        <source src="sounds/scout.ogg" type="audio/ogg">
+        <source src="sounds/scout.wav" type="audio/wav">
+    </audio>
+    <audio id="soldierSound" preload="auto">
+        <source src="sounds/soldier.mp3" type="audio/mpeg">
+        <source src="sounds/soldier.ogg" type="audio/ogg">
+        <source src="sounds/soldier.wav" type="audio/wav">
+    </audio>
+    <audio id="pyroSound" preload="auto">
+        <source src="sounds/pyro.mp3" type="audio/mpeg">
+        <source src="sounds/pyro.ogg" type="audio/ogg">
+        <source src="sounds/pyro.wav" type="audio/wav">
+    </audio>
+    <audio id="demomanSound" preload="auto">
+        <source src="sounds/demoman.mp3" type="audio/mpeg">
+        <source src="sounds/demoman.ogg" type="audio/ogg">
+        <source src="sounds/demoman.wav" type="audio/wav">
+    </audio>
+    <audio id="heavySound" preload="auto">
+        <source src="sounds/heavy.mp3" type="audio/mpeg">
+        <source src="sounds/heavy.ogg" type="audio/ogg">
+        <source src="sounds/heavy.wav" type="audio/wav">
+    </audio>
+    <audio id="spySound" preload="auto">
+        <source src="sounds/spy.mp3" type="audio/mpeg">
+        <source src="sounds/spy.ogg" type="audio/ogg">
+        <source src="sounds/spy.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
