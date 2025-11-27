@@ -272,53 +272,6 @@ function configureSound(character, soundPath) {
 // Add CSS for quote bubbles, fallback and fire particles
 const additionalStyles = document.createElement('style');
 additionalStyles.textContent = `
-    /* Light Fire Particles */
-    #fireParticles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 5;
-    }
-
-    .fire-particle {
-        position: absolute;
-        background: radial-gradient(circle, #ff8c00, #ff4500, #ff0000);
-        border-radius: 50%;
-        pointer-events: none;
-        filter: blur(1px) brightness(1.3);
-        animation: fireParticleFloat 4s ease-out forwards;
-        box-shadow: 
-            0 0 10px #ff4500,
-            0 0 20px #ff0000,
-            0 0 30px #ff4500;
-    }
-
-    @keyframes fireParticleFloat {
-        0% {
-            transform: translateY(0) translateX(0) scale(0.8);
-            opacity: 0.8;
-        }
-        25% {
-            transform: translateY(-30px) translateX(var(--move-x, 0px)) scale(1.1);
-            opacity: 1;
-        }
-        50% {
-            transform: translateY(-60px) translateX(calc(var(--move-x, 0px) * 0.7)) scale(1.2);
-            opacity: 0.8;
-        }
-        75% {
-            transform: translateY(-90px) translateX(calc(var(--move-x, 0px) * 0.3)) scale(0.9);
-            opacity: 0.5;
-        }
-        100% {
-            transform: translateY(-120px) translateX(0) scale(0.6);
-            opacity: 0;
-        }
-    }
-
     .quote-bubble {
         background: rgba(255, 0, 0, 0.9);
         color: white;
@@ -328,8 +281,8 @@ additionalStyles.textContent = `
         font-weight: bold;
         font-size: 0.8rem;
         text-transform: uppercase;
-        border: 2px solid #000;
-        box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+        border: 2px solid #ff0000ff;
+        box-shadow: 0 4px 15px rgba(98, 0, 0, 0.5);
         z-index: 10000;
         white-space: nowrap;
         animation: bubblePop 0.3s ease-out;
@@ -455,6 +408,7 @@ document.querySelectorAll('.video-card').forEach(card => {
     });
 }); */
 
+
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', () => {
     initializeCharacters();
@@ -496,3 +450,86 @@ window.testParticles = function() {
         createFireParticle();
     }
 };
+
+// Typing effect for hero title (optional)
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+// Initialize typing effect when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const heroTitle = document.querySelector('.hero-title');
+    const originalText = heroTitle.textContent;
+    
+    // Uncomment to enable typing effect
+    // typeWriter(heroTitle, originalText, 150);
+    
+    // Add loading animation
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+
+// Add interactive particles to hero section (optional)
+function createParticles() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.width = Math.random() * 3 + 1 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.background = '#ff0000ff';
+        particle.style.borderRadius = '50%';
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.top = Math.random() * 100 + 'vh';
+        particle.style.opacity = Math.random() * 0.3 + 0.1;
+        particle.style.animation = `float ${Math.random() * 10 + 10}s linear infinite`;
+        hero.appendChild(particle);
+    }
+}
+
+// Add CSS for particle animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes float {
+        0% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.3;
+        }
+        100% {
+            transform: translateY(-100vh) translateX(100px);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Initialize particles when page loads
+document.addEventListener('DOMContentLoaded', createParticles);
